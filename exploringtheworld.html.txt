@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exploring the World of Data: An EDA Journey on the Global Happiness Dataset</title>
+    <!-- Add other head elements like CSS links here -->
+</head>
+<body>
+    <!-- Introduction
+Welcome to my data science blog! Today, I’m excited to share an exploratory journey into the fascinating world of the Global Happiness Dataset. This dataset, a collection of factors contributing to the happiness scores of various countries, offers a unique opportunity to uncover insights about global well-being.
+
+Understanding the Dataset
+The Global Happiness Dataset is an amalgamation of data points from over 150 countries, ranking them based on factors like GDP per capita, social support, life expectancy, freedom to make life choices, generosity, and perceptions of corruption.
+
+Objective of the Analysis
+The primary goal of this analysis is to understand what factors most significantly contribute to a nation’s happiness score and to observe any interesting trends or patterns in the data.
+
+Data Collection
+The dataset was sourced from the World Happiness Report, an annual publication of the United Nations Sustainable Development Solutions Network.
+
+Data Preparation and Cleaning
+Upon initial inspection, the dataset required minimal cleaning, primarily involving standardizing the formats and dealing with a few missing values. Here's a snippet of the R code used for the preliminary data preparation:
+
+happiness_data <- read.csv('C:\\Users\\Ramya Chakravarthula\\OneDrive - UNT System\\Desktop\\2019.csv')
+
+# Checking for missing values
+sum(is.na(happiness_data))
+
+# Filling missing values for each numeric column
+happiness_data <- as.data.frame(lapply(happiness_data, function(x) {
+    if(is.numeric(x)) {
+        x[is.na(x)] <- mean(x, na.rm = TRUE)
+    }
+    return(x)
+}))
+Exploratory Data Analysis
+The EDA was conducted in R, focusing on various aspects:
+
+Descriptive Statistics: Understanding the central tendencies and spread of the data.
+
+Correlation Analysis: Identifying relationships between the happiness score and other variables.
+
+Data Visualization: Using ggplot2 for creating insightful plots.
+
+Key Findings
+GDP vs. Happiness: Countries with higher GDP per capita tend to have higher happiness scores.
+
+Health and Happiness: There is a strong positive correlation between life expectancy and happiness.
+
+Freedom and Generosity: Interestingly, while freedom correlated positively with happiness, generosity had a less pronounced impact.
+
+Conclusions
+The analysis reveals that economic and health factors are significant contributors to a country's happiness. However, cultural and social elements, like freedom and social support, also play crucial roles.
+
+Reflections and Further Analysis
+While the findings offer insightful glimpses into global happiness, future analyses could explore deeper, perhaps examining regional trends or the impact of policy changes over time.
+
+Closing Thoughts
+Exploratory Data Analysis is a powerful tool in the arsenal of a data scientist. It helps in unearthing trends, patterns, and insights that often form the foundation for further hypothesis testing and predictive modeling.
+
+Thank you for joining me on this data exploration journey! Feel free to share your thoughts or questions in the comments. -->
+</body>
+</html>
